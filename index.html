@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Words App</title>
+    <link rel="stylesheet" href="CSS/Style.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <h2>Reverse Every Word in a Sentence</h2>
+        <input type="text" id="sentenceInput" placeholder="Enter a sentence">
+        <button onclick="processSentence()">Reverse Words</button>
+        <p><strong>Output:</strong> <span id="output"></span></p>
+    </div>
+
+    <script>
+        function ReverseWords(sentence) {
+            return sentence.split(" ") // Split sentence into words
+                          .map(word => word.split("").reverse().join("")) // Reverse each word
+                          .join(" "); // Join words back into a sentence
+        }
+
+        function processSentence() {
+            const input = document.getElementById("sentenceInput").value;
+            const output = ReverseWords(input);
+            document.getElementById("output").textContent = output;
+        }
+    </script>
+
+</body>
+</html>
